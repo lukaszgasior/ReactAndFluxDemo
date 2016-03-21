@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/lukaszgasior/ReactAndFluxDemo/issues"
   },
-  "homepage": "https://github.com/lukaszgasior/ReactAndFluxDemo#readme"
+  "homepage": "https://github.com/lukaszgasior/ReactAndFluxDemo#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^3.2.0",
+    "gulp-open": "^1.0.0"
+  }
 }
