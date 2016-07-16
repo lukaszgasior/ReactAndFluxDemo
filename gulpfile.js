@@ -6,7 +6,7 @@ var open = require('gulp-open'); // Open a URL in a web browser
 var browserify = require('browserify'); // Bundles JS
 var reactify = require('reactify'); // Transforms React JSX to JS
 var source = require('vinyl-source-stream');  // Use conventional text streams with Gulp
-var lint = require('gulp-eslint'); // Lint JS files, including JSX
+// var lint = require('gulp-eslint'); // Lint JS files, including JSX
 var concat = require('gulp-concat'); // Concaatenates files
 
 var config = {
@@ -72,16 +72,18 @@ gulp.task('images', function () {
         .pipe(gulp.dest(config.paths.dist));
 })
 
-gulp.task('lint', function () {
-    return gulp.src(config.paths.js)
-                .pipe(lint({config: 'eslint.config.json'}))
-                .pipe(lint())
-                .pipe(lint.format());
-})
+// gulp.task('lint', function () {
+//     return gulp.src(config.paths.js)
+//                 .pipe(lint({config: 'eslint.config.json'}))
+//                 .pipe(lint())
+//                 .pipe(lint.format());
+// })
 
 gulp.task('watch', function () {
     gulp.watch(config.paths.html, ['html']);
-    gulp.watch(config.paths.js, ['js', 'lint']);
+    // gulp.watch(config.paths.js, ['js', 'lint']);
+    gulp.watch(config.paths.js, ['js']);
 })
 
-gulp.task('default', ['html', 'js', 'images', 'css', 'lint', 'open', 'watch']);
+// gulp.task('default', ['html', 'js', 'images', 'css', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'images', 'css', 'open', 'watch']);
